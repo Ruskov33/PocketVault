@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PocketVault</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">pocket<span>vault</span></div>
+    <div class="search-wrap">
+      <input type="text" id="input-busqueda" placeholder="Buscar películas, series, anime…">
+      <button class="btn-search" id="btn-buscar">Buscar</button>
+    </div>
+  </header>
+
+  <div class="tabs-bar" id="tabs-bar"></div>
+
+  <main>
+    <h2 class="section-title" id="titulo-seccion">Viendo</h2>
+    <div id="search-info" style="display:none"></div>
+    <div class="grid" id="grid-contenido"></div>
+  </main>
+
+  <!-- Editar película -->
+  <div class="modal-overlay" id="modal-peli">
+    <div class="modal-box">
+      <h3 id="modal-peli-titulo">Elemento</h3>
+      <div class="modal-group">
+        <span class="modal-label">Calificación</span>
+        <div class="stars-row" id="stars-container"></div>
+      </div>
+      <div class="modal-group">
+        <span class="modal-label">Mover a carpeta</span>
+        <select class="modal-select" id="modal-select-carpeta"></select>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-modal primary" id="btn-guardar-peli">Guardar cambios</button>
+        <button class="btn-modal danger" id="btn-eliminar-peli">Eliminar de la colección</button>
+        <button class="btn-modal secondary" id="btn-cerrar-modal-peli">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gestionar carpeta -->
+  <div class="modal-overlay" id="modal-carpeta">
+    <div class="modal-box">
+      <h3 id="modal-carpeta-titulo">Opciones de carpeta</h3>
+      <span class="modal-label">Renombrar carpeta</span>
+      <input type="text" class="modal-input" id="input-nombre-carpeta" placeholder="Nuevo nombre…">
+      <div class="modal-actions">
+        <button class="btn-modal primary" id="btn-confirmar-renombrar">Renombrar</button>
+        <button class="btn-modal danger" id="btn-confirmar-borrar">Eliminar carpeta</button>
+        <button class="btn-modal secondary" id="btn-cerrar-modal-carpeta">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nueva carpeta -->
+  <div class="modal-overlay" id="modal-nueva-carpeta">
+    <div class="modal-box">
+      <h3>Nueva carpeta</h3>
+      <span class="modal-label">Nombre</span>
+      <input type="text" class="modal-input" id="input-nueva-carpeta" placeholder="Ej: pendientes, favoritos…">
+      <div class="modal-actions">
+        <button class="btn-modal primary" id="btn-confirmar-nueva-carpeta">Crear carpeta</button>
+        <button class="btn-modal secondary" id="btn-cerrar-nueva-carpeta">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Añadir ítem -->
+  <div class="modal-overlay" id="modal-add-item">
+    <div class="modal-box">
+      <h3>Añadir elemento</h3>
+      <span class="modal-label">Título</span>
+      <input type="text" class="modal-input" id="input-add-titulo" placeholder="Ej: Evangelion, Dune…">
+      <span class="modal-label">Tipo</span>
+      <select class="modal-select" id="input-add-tipo">
+        <option value="Película">Película</option>
+        <option value="Serie">Serie</option>
+        <option value="Anime">Anime</option>
+        <option value="Documental">Documental</option>
+        <option value="Otro">Otro</option>
+      </select>
+      <span class="modal-label" style="margin-top:14px">URL del poster (opcional)</span>
+      <input type="text" class="modal-input" id="input-add-poster" placeholder="https://…">
+      <div class="modal-actions">
+        <button class="btn-modal primary" id="btn-confirmar-add-item">Añadir</button>
+        <button class="btn-modal secondary" id="btn-cerrar-add-item">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
